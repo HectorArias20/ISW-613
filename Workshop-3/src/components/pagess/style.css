@@ -1,0 +1,9 @@
+.paginas {
+    color:rgb(0, 0, 0);
+    margin:100px;
+    font-size: 40px;
+    
+}
+.paginas a{
+    border-bottom: solid 2px white;
+}

@@ -1,0 +1,13 @@
+footer a{
+    margin: 30px;
+    text-decoration: none;    
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+footer{
+    margin: 30px;
+    text-align: center;
+    height: 150px;
+    margin-top: 50%;
+}
