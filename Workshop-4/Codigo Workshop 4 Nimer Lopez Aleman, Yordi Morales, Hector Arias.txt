@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trodo TC</title>
+</head>
+<body >
+<!-- Nimer Lopez Aleman, Yordi Morales, Hector Arias -->
+    <section id="objetos">
+        <h1><?php 
+            $persona=new Persona();
+            echo $persona->getPersona();
+            ?>
+        </h1>
+        <p>
+            <?php
+               echo $persona->getPDate(); 
+            ?>
+        </p>
+        <?php
+            class Persona{
+            public $nombre="Nimer";
+            public $apellido="Lopez";
+            public $edad=12;
+            public $direc="Porvenir casa azul";
+
+            public function getPersona(){
+                return "Hola mi nombre es: ". $this->nombre ." ". $this->apellido;
+            }
+            public function getPDate(){
+                return "Hola mi nombre es: ". $this->nombre ." ". $this->apellido. " Tengo: ".$this->edad." años". " y vivo en: ". $this->direc;
+            }
+
+            }
+            // $nombres   = ['Rafael','Rafael','Rafael','Rafael'];
+            // $animal = array("gato", "perro", "vaca", "tigre","puma","girafa","leon");
+            // echo $animal[0]; 
+            $persona=new Persona();
+            IncoarObjetos($persona);
+
+        ?>
+    </section>
+    <div id="Array">
+            <h1>Arrays</h1>
+            <?php
+                 $animal = array("gato", "perro", "vaca", "tigre","puma","girafa","leon");
+                	$animal[]="Pajaro";//agrega nuevo animal
+                    array_unshift($animal,"Piojos");//agrega al inicio
+                    $animaldos= $animal;
+                    unset($animal[4]);//borra la 4 
+                    
+                    //$animal[0]="fggg";	
+                 for ($i=0; $i < count($animal); $i++) { 
+                    echo "<h4>".$i."-".$animal[$i]."</h4>"."<br>";
+                 }
+                  echo "<h1>Lista 2</h1>";
+                 
+                 $animaldos[]="Jordi";
+                 $animaldos[]="Hector";
+                  for ($i=0; $i < count($animaldos); $i++) { 
+                    echo "<h4>".$i."-".$animaldos[$i]."</h4>"."<br>";
+                 }
+                 
+                
+				$hoy = date("F/ j/ Y");
+                echo "La fecha es: ".$hoy
+            ?>
+    </div>
+    <div>
+        <h1>Numero invertidos</h1>
+        <p><?php
+            for ($i=10; $i >= 1; $i--) {
+                if ($i==1) {
+                    echo $i;
+                }else{
+                    echo $i."-";
+                }                 
+            };   
+
+
+        ?></p>
+
+
+    </div>
+    
+
+</body>
+</html>
+<?php
+    function IncoarObjetos($x){
+        echo "<h1>Pasar Objetos por parametro</h1>";
+        echo "<p>".$x->nombre."</p>";
+        echo "<p>".$x->apellido."</p>";
+        echo "<p>".$x->edad."</p>";
+        echo "<p>".$x->direc."</p>";                      
+    }
+?>
